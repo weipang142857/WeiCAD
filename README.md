@@ -10,6 +10,33 @@ STL is a raw mesh (rendered directly). STEP and the BREP solids inside FCStd are
 **in the browser** by `occt-import-js` (a WASM build of OpenCASCADE) running in a **Web Worker**,
 then displayed with three.js.
 
+## Quick start
+
+```bash
+git clone https://github.com/weipang142857/WeiCAD.git
+cd WeiCAD
+npm ci
+npm run dev
+```
+
+Open the Vite URL printed in the terminal, usually:
+
+```text
+http://localhost:5173/
+```
+
+Use the bundled demo buttons, choose a local file, or drag a `.FCStd`, `.STEP`/`.stp`, or `.STL`
+file into the viewer. After a model is loaded, click **Open another** to return to the picker and
+switch files.
+
+Bundled files for trying the viewer:
+
+```text
+public/demo/
+public/adopted/
+test/fixtures/
+```
+
 ## Architecture
 
 ```
