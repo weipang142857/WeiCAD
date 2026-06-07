@@ -1,0 +1,47 @@
+[
+  {
+    "file": "mfcad_easy_1.step",
+    "source": "efes:/home/x2jian/ai4manu-bench/Data/Concept Level/MFCAD-VLM/VLM-CADFeatureRecognition/Dataset/Test_Cases_STEP_Files/easy_1.STEP",
+    "purpose": "small STEP fixture"
+  },
+  {
+    "file": "mfcad_medium_1.stp",
+    "source": "efes:/home/x2jian/ai4manu-bench/Data/Concept Level/MFCAD-VLM/VLM-CADFeatureRecognition/Dataset/Test_Cases_STEP_Files/medium_1.stp",
+    "purpose": "medium STEP fixture"
+  },
+  {
+    "file": "mfcad_hard_13.step",
+    "source": "efes:/home/x2jian/ai4manu-bench/Data/Concept Level/MFCAD-VLM/VLM-CADFeatureRecognition/Dataset/Test_Cases_STEP_Files/hard_13.STEP",
+    "purpose": "larger STEP stress fixture"
+  },
+  {
+    "file": "freecad_simple_door.fcstd",
+    "source": "efes:/home/x2jian/ai4manu-bench/Data/Concept Level/freecad_library/Architectural Parts/Doors/Generic/Simple door.fcstd",
+    "purpose": "matched FreeCAD-library FCStd fixture"
+  },
+  {
+    "file": "freecad_simple_door.step",
+    "source": "efes:/home/x2jian/ai4manu-bench/Data/Concept Level/freecad_library/Architectural Parts/Doors/Generic/Simple door.step",
+    "purpose": "matched FreeCAD-library STEP fixture"
+  },
+  {
+    "file": "freecad_simple_door.stl",
+    "source": "efes:/home/x2jian/ai4manu-bench/Data/Concept Level/freecad_library/Architectural Parts/Doors/Generic/Simple door.stl",
+    "purpose": "matched FreeCAD-library STL fixture"
+  },
+  {
+    "file": "freecad_slab_adjustable_scaffolder.fcstd",
+    "source": "efes:/home/x2jian/ai4manu-bench/Data/Concept Level/freecad_library/Architectural Parts/Building Construction/Slab adjustable scaffolder.FCStd",
+    "purpose": "matched FreeCAD-library FCStd fixture"
+  },
+  {
+    "file": "freecad_slab_adjustable_scaffolder.step",
+    "source": "efes:/home/x2jian/ai4manu-bench/Data/Concept Level/freecad_library/Architectural Parts/Building Construction/Slab adjustable scaffolder.step",
+    "purpose": "matched FreeCAD-library STEP fixture"
+  },
+  {
+    "file": "freecad_slab_adjustable_scaffolder.stl",
+    "source": "efes:/home/x2jian/ai4manu-bench/Data/Concept Level/freecad_library/Architectural Parts/Building Construction/Slab adjustable scaffolder.stl",
+    "purpose": "matched FreeCAD-library STL fixture"
+  }
+]
