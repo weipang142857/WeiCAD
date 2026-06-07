@@ -34,4 +34,19 @@ describe('appState reducer', () => {
     expect(s.error).toBe('boom');
     expect(s.loading).toBe(false);
   });
+
+  it('clears the loaded model and returns to the picker state', () => {
+    const loaded = reducer(initialState, { type: 'loaded', model });
+    const measuring = reducer(loaded, { type: 'setMeasure', on: true });
+    const sectioned = reducer(measuring, { type: 'setSection', section: { on: true, axis: 'x', offset: 2 } });
+    const cleared = reducer(sectioned, { type: 'clearModel' });
+
+    expect(cleared.model).toBeNull();
+    expect(cleared.partVisibility).toEqual({});
+    expect(cleared.selectedPartId).toBeNull();
+    expect(cleared.section).toEqual(initialState.section);
+    expect(cleared.measureMode).toBe(false);
+    expect(cleared.loading).toBe(false);
+    expect(cleared.error).toBeNull();
+  });
 });

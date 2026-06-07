@@ -30,6 +30,7 @@ export const initialState: AppState = {
 export type Action =
   | { type: 'loadStart' }
   | { type: 'loaded'; model: SceneModel }
+  | { type: 'clearModel' }
   | { type: 'error'; message: string }
   | { type: 'togglePart'; id: string }
   | { type: 'selectPart'; id: string | null }
@@ -46,6 +47,17 @@ export function reducer(state: AppState, action: Action): AppState {
       for (const p of action.model.parts) partVisibility[p.id] = true;
       return { ...state, model: action.model, partVisibility, selectedPartId: null, loading: false, error: null };
     }
+    case 'clearModel':
+      return {
+        ...state,
+        model: null,
+        partVisibility: {},
+        selectedPartId: null,
+        section: initialState.section,
+        measureMode: false,
+        loading: false,
+        error: null,
+      };
     case 'error': return { ...state, error: action.message, loading: false };
     case 'togglePart':
       return { ...state, partVisibility: { ...state.partVisibility, [action.id]: !state.partVisibility[action.id] } };

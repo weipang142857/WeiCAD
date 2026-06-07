@@ -5,6 +5,7 @@ import type { StandardView } from '../viewer/viewerMath';
 interface Props {
   displayMode: DisplayMode;
   quality: Quality;
+  hasModel: boolean;
   section: boolean;
   measure: boolean;
   sectionAxis: 'x' | 'y' | 'z';
@@ -18,6 +19,7 @@ interface Props {
   onSectionOffset: (o: number) => void;
   onToggleMeasure: () => void;
   onQuality: (q: Quality) => void;
+  onClearModel: () => void;
   onScreenshot: () => void;
 }
 
@@ -49,6 +51,8 @@ export function Toolbar(p: Props) {
       <select aria-label="quality" value={p.quality} onChange={(e) => p.onQuality(e.target.value as Quality)}>
         {(['draft', 'normal', 'fine'] as Quality[]).map((q) => <option key={q} value={q}>{q}</option>)}
       </select>
+      <span style={{ flex: 1 }} />
+      <button onClick={p.onClearModel} disabled={!p.hasModel}>Open another</button>
       <button onClick={p.onScreenshot}>Screenshot</button>
     </div>
   );

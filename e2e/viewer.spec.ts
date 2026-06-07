@@ -26,6 +26,20 @@ test('loads the STL demo (no-worker path) and renders a non-empty canvas', async
   expect(await canvasRenders(page)).toBe(true);
 });
 
+test('returns to the picker and loads another demo file', async ({ page }) => {
+  await page.goto('/');
+  await page.getByText('bolt_m16 (STL)').click();
+  await expect(page.getByRole('cell', { name: 'bolt_m16.stl' })).toBeVisible({ timeout: 30000 });
+
+  await page.getByRole('button', { name: 'Open another' }).click();
+  await expect(page.getByText('Drop a .FCStd / .STEP / .STL file')).toBeVisible();
+  await expect(page.getByText('No model loaded')).toBeVisible();
+
+  await page.getByText('lego_brick (STEP)').click();
+  await expect(page.getByRole('cell', { name: 'lego_brick.step' })).toBeVisible({ timeout: 30000 });
+  await expect(page.getByRole('cell', { name: 'STEP', exact: true })).toBeVisible();
+});
+
 test('measures point-to-point between two surface picks', async ({ page }) => {
   await page.goto('/');
   // Dense, well-centered model so center clicks reliably hit geometry under swiftshader.

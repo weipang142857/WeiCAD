@@ -80,6 +80,12 @@ export default function App() {
     applySection({ ...state.section, offset });
   }
 
+  function onClearModel() {
+    viewer.current?.clearModel();
+    setMeasureDistance(null);
+    dispatch({ type: 'clearModel' });
+  }
+
   return (
     <div style={{ position: 'fixed', inset: 0, display: 'grid',
                   gridTemplateColumns: '220px 1fr 260px', gridTemplateRows: 'auto 1fr',
@@ -87,6 +93,7 @@ export default function App() {
       <div style={{ gridColumn: '1 / 4' }}>
         <Toolbar
           displayMode={state.displayMode} quality={state.quality}
+          hasModel={!!state.model}
           section={state.section.on} measure={state.measureMode}
           sectionAxis={state.section.axis} sectionOffset={state.section.offset}
           sectionRange={sectionRange(state.section.axis)}
@@ -98,6 +105,7 @@ export default function App() {
           onSectionOffset={onSectionOffset}
           onToggleMeasure={onToggleMeasure}
           onQuality={(q) => dispatch({ type: 'setQuality', quality: q })}
+          onClearModel={onClearModel}
           onScreenshot={() => { const url = viewer.current?.screenshot(); if (url) { const a = document.createElement('a'); a.href = url; a.download = 'view.png'; a.click(); } }}
         />
       </div>

@@ -71,6 +71,15 @@ export class Viewer {
     this.standardView('iso');
   }
 
+  clearModel() {
+    this.setMeasureMode(false);
+    this.setSection(false);
+    this.clear();
+    this.bboxSize = [1, 1, 1];
+    this.center.set(0, 0, 0);
+    this.standardView('iso');
+  }
+
   private addPart(part: Part) {
     const g = new THREE.BufferGeometry();
     g.setAttribute('position', new THREE.BufferAttribute(part.positions, 3));

@@ -4,6 +4,7 @@ A fully client-side web viewer for **`.FCStd`**, **`.STEP`/`.stp`**, and **`.STL
 Drag a file in (or open a bundled demo) and inspect it in 3D — orbit/zoom/pan, a parts tree
 with per-part visibility, a metadata panel, display modes (shaded / shaded+edges / wireframe),
 a section plane, and PNG screenshot. **No server required.**
+Click **Open another** to clear the current model and return to the file/demo picker.
 
 STL is a raw mesh (rendered directly). STEP and the BREP solids inside FCStd are tessellated
 **in the browser** by `occt-import-js` (a WASM build of OpenCASCADE) running in a **Web Worker**,
